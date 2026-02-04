@@ -1,46 +1,79 @@
+:root {
+  --card-bg: var(--bg);
+  --card-border: var(--bg);
+  --card-hover-bg: #5058926b;
+  --card-hover-border: #505892;
+  --card-header-bg: #171929;
+  --card-hover-header-bg: #505892;
+  --card-transition: 100ms all;
+  --card-shadow: 0px 0px 100px #9858ff52;
+  --input-bg: var(--bg);
+  --input-border-color: var(--active-bg);
+  --input-color: white;
+}
+
+/* Estilos para el panel de formulario */
 .form-panel {
   background-color: #292b45;
   padding: 20px;
 }
 
-
+/* Estilos para la página de patrocinadores */
 .sponsor-page {
   text-align: center;
 }
 
+/* Estilos para el contenedor del código QR */
 .qr-wrapper {
-    background-color: #FFF;
-    padding: 10px;
-    display: inline-block;
-    padding-bottom: 5px;
-    margin: 20px auto 0px;
+  background-color: #FFF;
+  padding: 10px;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin: 20px auto 0px;
 }
 
+/* Estilos para el grupo de información */
 .info-group {
   max-width: 400px;
+}
+
+/* Estilos para las tarjetas */
+.card,
+.middle-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--card-border);
+  cursor: pointer;
+  position: relative;
+  transition: var(--card-transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .card-header {
+    background-color: var(--card-header-bg);
+  }
+
+  .card-title {
+    font-weight: bold;
+
+    span {
+      font-weight: 100;
+    }
+  }
 }
 
 .card {
   width: 240px;
   height: 220px;
-  background-color: var(--bg);
-  border: 2px solid var(--bg);
-  cursor: pointer;
-  position: relative;
-  transition: 100ms all;
-  margin: 30px 30px 20px 30px;
-  @media(min-width: 476px) {
-    margin: 30px 100px 20px 100px;
-  }
-  @media(min-width: 851px) {
-    margin: 60px 20px 40px 20px;
+  margin: 30px;
+
+  @media (min-width: 476px) {
+    margin: 30px 100px 20px;
   }
 
-  .card-title {
-    font-weight: bold;
-    span {
-      font-weight: 100;
-    }
+  @media (min-width: 851px) {
+    margin: 60px 20px 40px;
   }
 
   &.bigger {
@@ -50,53 +83,37 @@
   }
 
   &:hover {
-    background-color: #5058926b;
-    border: 2px solid #505892;
+    background-color: var(--card-hover-bg);
+    border: 2px solid var(--card-hover-border);
     transform: scale(1.1) translateY(-10px);
     margin-top: 70px;
 
     .card-header {
-      background-color: #505892;
+      background-color: var(--card-hover-header-bg);
     }
   }
-}
-
-.donation-form {
-  max-width: 280px;
-  margin: auto;
-  button {
-    width: 100%;
-  }
-}
-
-.card-header {
-  background-color: #171929;
-}
-
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .middle-card {
   width: 280px;
   height: 260px;
   margin-top: 40px;
+
   &:hover {
     margin-top: 50px;
   }
 }
 
+/* Estilos para el borde brillante */
 .shiny-border {
-  background-color: #5058926b;
-  border: 2px solid #505892;
+  background-color: var(--card-hover-bg);
+  border: 2px solid var(--card-hover-border);
   transform: scale(1.1) translateY(-10px);
   margin-top: 70px;
-  box-shadow: 0px 0px 100px #9858ff52;
+  box-shadow: var(--card-shadow);
+
   .card-header {
-    background-color: #505892;
+    background-color: var(--card-hover-header-bg);
   }
 
   &.middle-card {
@@ -104,15 +121,39 @@
   }
 }
 
-.input-group {
-  margin: 20px auto;
+/* Estilos para el formulario de donación */
+.donation-form {
+  max-width: 280px;
+  margin: auto;
+
+  button {
+    width: 100%;
+  }
 }
 
+/* Estilos para el contenedor flexible */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Estilos para el input oscuro */
+.input-dark {
+  background-color: var(--input-bg);
+  border-color: var(--input-border-color);
+  color: var(--input-color);
+}
+
+/* Estilos para la confirmación de donación */
 .donation-confirmed {
   h2 {
     margin-top: 50px;
+
     span {
       display: block;
+
       &:last-child {
         color: #9858ff;
         font-weight: bold;
@@ -123,6 +164,7 @@
 
   .order-details {
     margin-top: 50px;
+
     span {
       color: #d81b60;
       margin-left: 10px;
@@ -130,6 +172,7 @@
   }
 }
 
+/* Estilos para el cuerpo de la tarjeta */
 .card-body {
   align-items: center;
   display: flex;
@@ -138,13 +181,13 @@
   height: 100%;
 }
 
+/* Estilos para el contenedor */
 .wrapper {
   text-align: center;
   width: 100%;
 }
 
-.input-dark {
-  background-color: var(--bg);
-  border-color: var(--active-bg);
-  color: white;
+/* Estilos para el grupo de inputs */
+.input-group {
+  margin: 20px auto;
 }
