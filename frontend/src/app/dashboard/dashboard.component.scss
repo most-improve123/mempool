@@ -1,19 +1,33 @@
+:root {
+  --card-padding: 20px;
+  --table-cell-padding-y: 0.71rem;
+}
+
 .dashboard-container {
   text-align: center;
   margin-top: 0.5rem;
+
   .col {
     margin-bottom: 1.5rem;
   }
 }
 
-.card {
+.card,
+.card-liquid {
   background-color: var(--bg);
+}
+
+.card {
   height: 100%;
 }
 
 .card-title {
   color: var(--title-fg);
   font-size: 1rem;
+}
+
+.card-body {
+  padding: var(--card-padding);
 }
 
 .info-block {
@@ -36,6 +50,14 @@
 
 .skeleton-loader {
   max-width: 100%;
+
+  &-transactions {
+    max-width: 250px;
+    position: relative;
+    top: 2px;
+    margin-bottom: -3px;
+    height: 18px;
+  }
 }
 
 .more-padding {
@@ -44,9 +66,11 @@
 
 .graph-card {
   height: 100%;
+
   @media (min-width: 768px) {
     height: 415px;
   }
+
   @media (min-width: 992px) {
     height: 510px;
   }
@@ -55,167 +79,196 @@
 .mempool-info-data {
   min-height: 56px;
   display: block;
+
   @media (min-width: 485px) {
     display: flex;
     flex-direction: row;
   }
-  &.lbtc-pegs-stats { 
+
+  &.lbtc-pegs-stats {
     display: flex;
     flex-direction: row;
   }
+
   h5 {
     margin-bottom: 10px;
   }
+
   .item {
     width: 50%;
     margin: 0px auto 20px;
     display: inline-block;
+
     @media (min-width: 485px) {
       margin: 0px auto 10px;
     }
+
     @media (min-width: 768px) {
       margin: 0px auto 0px;
     }
+
     &:last-child {
       margin: 0px auto 0px;
     }
+
     &:nth-child(2) {
       order: 2;
+
       @media (min-width: 485px) {
         order: 3;
       }
     }
+
     &:nth-child(3) {
       order: 3;
+
       @media (min-width: 485px) {
         order: 2;
         display: block;
       }
+
       @media (min-width: 768px) {
         display: none;
       }
+
       @media (min-width: 992px) {
         display: block;
       }
     }
+
     .card-text {
       font-size: 18px;
+
       span {
         color: var(--transparent-fg);
         font-size: 12px;
       }
+
       .bitcoin-color {
         color: var(--orange);
       }
     }
+
     .progress {
       width: 90%;
+
       @media (min-width: 768px) {
         width: 100%;
       }
     }
   }
+
   .bar {
     width: 93%;
     margin: 0px 5px 20px;
+
     @media (min-width: 485px) {
       max-width: 200px;
       margin: 0px auto 0px;
     }
   }
+
   .skeleton-loader {
     width: 100%;
     max-width: 100px;
     display: block;
     margin: 18px auto 0;
   }
+
   .skeleton-loader-big {
     max-width: 180px;
   }
 }
 
-.latest-transactions {
+table.latest-transactions,
+table.lastest-blocks-table,
+table.lastest-replacements-table {
   width: 100%;
   text-align: left;
-  table-layout:fixed;
+  table-layout: fixed;
+
   tr, td, th {
     border: 0px;
-    padding-top: 0.71rem !important;
-    padding-bottom: 0.75rem !important;
+    padding-top: var(--table-cell-padding-y) !important;
+    padding-bottom: var(--table-cell-padding-y) !important;
   }
+
   td {
-    overflow:hidden;
+    overflow: hidden;
     width: 25%;
   }
+}
+
+.latest-transactions {
   .table-cell-satoshis {
     display: none;
     text-align: right;
+
     @media (min-width: 576px) {
       display: table-cell;
     }
+
     @media (min-width: 768px) {
       display: none;
     }
+
     @media (min-width: 1100px) {
       display: table-cell;
     }
   }
+
   .table-cell-fiat {
     display: none;
     text-align: right;
+
     @media (min-width: 485px) {
       display: table-cell;
     }
+
     @media (min-width: 768px) {
       display: none;
     }
+
     @media (min-width: 992px) {
       display: table-cell;
     }
   }
+
   .table-cell-fees {
     text-align: right;
   }
 }
-.skeleton-loader-transactions {
-  max-width: 250px;
-  position: relative;
-  top: 2px;
-  margin-bottom: -3px;
-  height: 18px;
-}
 
 .lastest-blocks-table {
-  width: 100%;
-  text-align: left;
-  tr, td, th {
-    border: 0px;
-    padding-top: 0.65rem !important;
-    padding-bottom: 0.7rem !important;
-  }
   .table-cell-height {
     width: 15%;
   }
+
   .table-cell-mined {
     width: 35%;
     text-align: left;
   }
+
   .table-cell-transaction-count {
     display: none;
     text-align: right;
     width: 20%;
     display: table-cell;
   }
+
   .table-cell-size {
     display: none;
     text-align: center;
     width: 30%;
+
     @media (min-width: 485px) {
       display: table-cell;
     }
+
     @media (min-width: 768px) {
       display: none;
     }
+
     @media (min-width: 992px) {
       display: table-cell;
     }
@@ -223,34 +276,25 @@
 }
 
 .lastest-replacements-table {
-  width: 100%;
-  text-align: left;
-  table-layout:fixed;
-  tr, td, th {
-    border: 0px;
-    padding-top: 0.71rem !important;
-    padding-bottom: 0.75rem !important;
-  }
-  td {
-    overflow:hidden;
-    width: 25%;
-  }
   .table-cell-txid {
     width: 25%;
     text-align: start;
   }
+
   .table-cell-old-fee {
     width: 25%;
     text-align: end;
 
-    @media(max-width: 1080px) {
+    @media (max-width: 1080px) {
       display: none;
     }
   }
+
   .table-cell-new-fee {
     width: 20%;
     text-align: end;
   }
+
   .table-cell-badges {
     width: 23%;
     padding-right: 0;
@@ -265,14 +309,17 @@
 
 .mempool-graph {
   height: 255px;
+
   @media (min-width: 768px) {
     height: 285px;
   }
+
   @media (min-width: 992px) {
     height: 370px;
   }
 }
-.loadingGraphs{
+
+.loadingGraphs {
   height: 250px;
   display: grid;
   place-items: center;
@@ -280,6 +327,7 @@
 
 .inc-tx-progress-bar {
   max-width: 250px;
+
   .progress-bar {
     padding: 4px;
   }
@@ -315,19 +363,22 @@
   .card {
     height: auto !important;
   }
+
   .card-body {
     display: flex;
     flex: inherit;
     text-align: center;
     flex-direction: column;
     justify-content: space-around;
-    padding: 22px 20px;
+    padding: 22px var(--card-padding);
+
     &.liquid {
       height: 124.5px;
     }
   }
+
   .less-padding {
-    padding: 20px 20px;
+    padding: var(--card-padding);
   }
 }
 
@@ -391,6 +442,7 @@
     max-height: 344px;
     max-width: 344px;
   }
+
   @media (min-width: 992px) {
     max-height: 410px;
     max-width: 410px;
@@ -419,11 +471,12 @@
 }
 
 .card-liquid {
-  background-color: var(--bg);
   height: 418px;
+
   @media (min-width: 992px) {
     height: 512px;
   }
+
   &.smaller {
     height: 408px;
   }
