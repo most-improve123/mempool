@@ -1,51 +1,52 @@
+:root {
+  --bg: #ffffff;
+  --title-fg: #333333;
+  --fg: #555555;
+  --opacity: 1;
+}
+
 .dashboard-container {
   text-align: center;
-  margin-top: 18px;
-  @media (min-width: 992px) {
-    padding-bottom: 0px;
-  }
-  .col {
-    margin-bottom: 1.5rem;
-  }
+  margin-top: 1.125rem;
 }
 
 .card {
   background-color: var(--bg);
 }
 
+.card-title {
+  font-size: 1rem;
+  color: var(--title-fg);
+}
+
+.card-title > a {
+  color: var(--title-fg);
+}
+
 .graph-card {
   height: 100%;
-  @media (min-width: 992px) {
-    height: 385px;
-  }
 }
 
 .fixed-mempool-graph {
   height: 330px;
 }
 
-.mempool-graph, .fixed-mempool-graph {
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .mempool-graph, .fixed-mempool-graph {
     height: 345px;
   }
-  @media (min-width: 992px) {
+}
+
+@media (min-width: 992px) {
+  .dashboard-container {
+    padding-bottom: 0;
+  }
+  .graph-card {
+    height: 385px;
+  }
+  .mempool-graph, .fixed-mempool-graph {
     height: 439px;
   }
-}
-
-.card-title {
-  font-size: 1rem;
-  color: var(--title-fg);
-}
-.card-title > a {
-  color: var(--title-fg);
-}
-
-.card-body.pool-ranking {
-  padding: 1.25rem 0.25rem 0.75rem 0.25rem;
-}
-.card-text {
-  font-size: 22px;
 }
 
 #blockchain-container {
@@ -61,59 +62,67 @@
 }
 
 .fade-border {
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 80%, transparent 100%)
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 80%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 80%, transparent 100%);
 }
 
 .main-title {
   position: relative;
   color: var(--fg);
   opacity: var(--opacity);
-  margin-top: -13px;
-  font-size: 10px;
+  margin-top: -0.8125rem;
+  font-size: 0.625rem;
   text-transform: uppercase;
   font-weight: 500;
   text-align: center;
-  padding-bottom: 3px;
+  padding-bottom: 0.1875rem;
 }
 
 .more-padding {
-  padding: 24px 20px !important;
+  padding: 1.5rem 1.25rem;
 }
 
-.card-wrapper {
-  .card {
-    height: auto !important;
-  }
-  .card-body {
-    display: flex;
-    flex: inherit;
-    text-align: center;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 22px 20px;
-  }
+.card-wrapper .card {
+  height: auto;
+}
+
+.card-wrapper .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1.375rem 1.25rem;
+  text-align: center;
 }
 
 .skeleton-loader {
   width: 100%;
   display: block;
-  &:first-child {
-    max-width: 90px;
-    margin: 15px auto 3px;
-  }
-  &:last-child {
-    margin: 10px auto 3px;
-    max-width: 55px;
-  }
+}
+
+.skeleton-loader:first-child {
+  max-width: 5.625rem;
+  margin: 0.9375rem auto 0.1875rem;
+}
+
+.skeleton-loader:last-child {
+  margin: 0.625rem auto 0.1875rem;
+  max-width: 3.4375rem;
+}
+
+.title-link,
+.title-link:hover,
+.title-link:focus,
+.title-link:active {
+  display: block;
+  margin-bottom: 0.625rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-body.pool-ranking {
+  padding: 0.75rem 0.15625rem 0.4375rem 0.15625rem;
 }
 
 .card-text {
-  font-size: 22px;
-}
-
-.title-link, .title-link:hover, .title-link:focus, .title-link:active {
-  display: block;
-  margin-bottom: 10px;
-  text-decoration: none;
-  color: inherit;
+  font-size: 1.375rem;
 }
