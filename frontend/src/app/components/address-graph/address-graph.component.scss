@@ -1,9 +1,11 @@
 .card-header {
   border-bottom: 0;
   font-size: 18px;
+
   @media (min-width: 465px) {
     font-size: 20px;
   }
+
   @media (min-width: 992px) {
     height: 40px;
   }
@@ -24,7 +26,7 @@
 .full-container {
   display: flex;
   flex-direction: column;
-  padding: 0px;
+  padding: 0;
   width: 100%;
   height: 400px;
 }
@@ -36,20 +38,23 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-
   font-size: 15px;
   color: grey;
   font-weight: bold;
 }
 
+.chart,
+.chart-widget {
+  width: 100%;
+}
+
 .chart {
   display: flex;
   flex: 1;
-  width: 100%;
   padding-right: 10px;
 }
+
 .chart-widget {
-  width: 100%;
   height: 100%;
 }
 
